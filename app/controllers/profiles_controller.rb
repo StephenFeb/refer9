@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
+    @profile = current_user.build_profile
   end
 
   # GET /profiles/1/edit
@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
+    @profile = current_user.build_profile(profile_params)
 
     respond_to do |format|
       if @profile.save
@@ -69,7 +69,7 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:screenname, :city)
+      params.require(:profile).permit(:name, :job_title, :work_experience, :skills)
     end
 end
 
