@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if @user.avatar.attached? %>
+  <image src="<%=(url_for(@user.avatar)) %>">
+<% end %>
+
 <p>
   <strong>Name:</strong>
   <%= @profile.name %>
