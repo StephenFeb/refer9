@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% if @user.avatar.attached? %>
-  <image src="<%=(url_for(@user.avatar)) %>">
-<% end %>
+<%= image_tag current_user.avatar, width: "150px", height: "150px", class: "rounded-circle" %>
 
 <p>
   <strong>Name:</strong>

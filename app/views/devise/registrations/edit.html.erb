@@ -23,6 +23,15 @@
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
+  <div class="input-group">
+    <%= f.label :Avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <% if resource.avatar.attached? %>
+    <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
+  <% end %>
+
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
