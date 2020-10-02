@@ -1,0 +1,10 @@
+<h1>Editing Job</h1>
+
+<div class="form-group">
+    <%= f.text_field :avatar %>
+</div>
+
+<%= render 'form', job: @job %>
+
+<%= link_to 'Show', @job %> |
+<%= link_to 'Back', jobs_path %>
