@@ -1,26 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag current_user.avatar, width: "150px", height: "150px", class: "rounded-circle" %>
+<div class="container">
+  <div class="card" >
+    <div class="card-body">
+      <div style="text-align:center;">
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+    <%= image_tag current_user.avatar, width: "150px", height: "150px", class: "rounded-circle" %>
 
-<p>
-  <strong>Job Title:</strong>
-  <%= @profile.job_title %>
-</p>
+    <h4 class="card-title"><%= @profile.name %> </h4>
 
-<p>
-  <strong>Work Experience:</strong>
-  <%= @profile.work_experience %>
-</p>
+    <p class="card-text"><strong>Job Title:</strong> <%= @profile.job_title %> </p>
 
-<p>
-  <strong>Skills:</strong>
-  <%= @profile.skills %>
-</p>
+    <p class="card-text"><strong>Work Experience:</strong> <%= @profile.work_experience %> </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+    <p class="card-text"><strong>Skills:</strong> <%= @profile.skills %> </p>
+
+    <p>
+      <strong>Job Title:</strong>
+      <%= @profile.job_title %>
+    </p>
+
+    <p>
+      <strong>Work Experience:</strong>
+      <%= @profile.work_experience %>
+    </p>
+
+    <p>
+      <strong>Skills:</strong>
+      <%= @profile.skills %>
+    </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;">
+  <button class="btn btn-primary" <%= link_to 'Edit', edit_profile_path(@profile) %> </button>
+  <button class="btn btn-primary" <%= link_to 'Back', profiles_path %> </button>
+</div>
