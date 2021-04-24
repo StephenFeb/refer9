@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.title {
+    text-align: center;
+  }
+
+  .banner-headline {
+    text-align: center;
+  }
+
+  .hiw-headline {
+      h3 {
+        color: $gray;
+        text-align: center;
+        margin-top: 20px;
+      }
+   }
+
+   .hiw-item {
+    text-align: center;
+    padding: 5px 20px;
+  }
