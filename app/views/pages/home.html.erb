@@ -1,2 +1,59 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <h1 class="title">Refer</h1>
+</div>
+
+<div class="banner">
+  <div class="container">
+    <h1 class="banner-headline"><strong> Get your connections the jobs they really want </strong></h1>
+    <br>
+  </div>
+</div>
+<div class="hiw-headline">
+  <br>
+  <br>
+  <h3><strong>How it works</strong></h3>
+</div>
+
+<div class="container">
+  <div class="row three-steps">
+    <div class="col-md-4">
+      <div class="hiw-item">
+        <h5 class="mt-3">Search jobs and connections</h5>
+        <p>Browse, post jobs and let connections know you are looking for work</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="hiw-item">
+     
+        <h5 class="mt-4">Refer connections for jobs</h5>
+        <p>Reccomend connections for jobs they really want and you know they would be great at!</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="hiw-item">
+        <h5 class="mt-4">Get paid</h5>
+        <p>Recieve referal fees for successful matches</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row three-steps">
+    <div class="col-md-4">
+    <div class="hiw-item">
+        <p><%= link_to "About Refer", about_path, class: "btn btn-success" %></p>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="hiw-item">
+        <p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %></p>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="hiw-item">
+        <p><%= link_to "Log In", new_user_session_path, class: "btn btn-success" %></p>
+    </div>
+    </div>
+  </div>
+  </div>
