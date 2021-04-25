@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_one_attached :avatar
+  has_many :jobs
 end
