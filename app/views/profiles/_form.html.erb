@@ -16,25 +16,27 @@
       <%= form.file_field :avatar %>
     </div>
   
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-  
-    <div class="field">
-      <%= form.label :job_title %>
-      <%= form.text_field :job_title %>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
     </div>
 
-    <div class="field">
-      <%= form.label :work_experience %>
-      <%= form.text_field :work_experience %>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Current Job Title</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
     </div>
 
-    <div class="field">
-      <%= form.label :skills %>
-      <%= form.text_field :skills %>
-    </div>
+  <select class="custom-select">
+    <option selected>Work Experience</option>
+    <option value="1">1 Year</option>
+    <option value="2">2-5 Years</option>
+    <option value="3">5+ Years</option>
+  </select>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Skills</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
   
     <div class="actions">
       <%= form.submit %>

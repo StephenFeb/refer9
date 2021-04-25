@@ -18,8 +18,9 @@
 
 <p>
   <strong>Skills:</strong>
-  <%= @jobs.skills %>
+  <%= @job.skills %>
 </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Refer', "#", class: "btn btn-success" %>
+<%= link_to 'Edit', edit_job_path(@job), class: "btn btn-light" %> |
+<%= link_to 'Show Open Positions', jobs_path, class: "btn btn-secondary" %>
