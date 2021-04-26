@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @organisation.name %>
+</p>
+
+<p>
+  <strong>Emplopees:</strong>
+  <%= @organisation.employees %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @organisation.description %>
+</p>
+
+<%= link_to 'Refer', "#", class: "btn btn-success" %>
+<%= link_to 'Edit', edit_organisation_path(@organisation), class: "btn btn-light" %> |
+<%= link_to 'Show Open Positions', jobs_path, class: "btn btn-secondary" %>
