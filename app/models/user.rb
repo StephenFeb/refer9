@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :jobs
 
+  has_many :conversations
+  has_many :messages, dependent: :destroy
+
 end
