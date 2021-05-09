@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :profiles
   resources :jobs
+  
+  resources :posts do
+    resources :comments
+  end
 
   resources :conversations do
     resources :messages

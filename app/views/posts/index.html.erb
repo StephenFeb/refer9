@@ -1,0 +1,13 @@
+
+<h1>Posts</h1>
+
+
+    <% @posts.each do |post| %>
+      <div class="card">
+        <div class="card-body">
+          <%= simple_format post.content %>
+          <%= link_to 'Comment', "#", class: "btn btn-light" %> 
+        </div>
+      </div>
+    <% end %>
+  
