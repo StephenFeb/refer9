@@ -5,8 +5,9 @@
     <% @posts.each do |post| %>
       <div class="card">
         <div class="card-body">
+          <strong><%= link_to post.title, post_path(post)  %></strong>
           <%= simple_format post.content %>
-          <%= link_to 'Comment', "#", class: "btn btn-light" %> 
+          <%= link_to 'Write Comment', "#", class: "btn btn-primary" %> 
         </div>
       </div>
     <% end %>

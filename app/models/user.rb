@@ -7,8 +7,9 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_one_attached :avatar
   has_many :jobs
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   acts_as_voter
 

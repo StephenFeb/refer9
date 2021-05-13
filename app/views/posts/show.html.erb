@@ -1,6 +1,12 @@
 <div class="card">
   <div class="card-body">
+    <h2><%= @post.title %></h2>
     <p><%= simple_format @post.content %></p>
+    <p>Comments</p>
+    <% @comments.each do |comment| %>
+    <p><%= simple_format comment.content %></p>
+    <% end %>
+    <%= link_to "Comment", new_post_comment_path(@post), class: "btn btn-primary" %>
   </div>
 </div>
 
