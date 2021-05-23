@@ -2,7 +2,7 @@
   <div class="card-body">
     <h2><%= @post.title %></h2>
     <p><%= simple_format @post.content %></p>
-    <p>Comments</p>
+    <strong><p>Comments</p></strong>
     <% @comments.each do |comment| %>
     <p><%= simple_format comment.content %></p>
     <% end %>

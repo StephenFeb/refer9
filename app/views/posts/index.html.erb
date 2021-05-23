@@ -7,7 +7,6 @@
         <div class="card-body">
           <strong><%= link_to post.title, post_path(post)  %></strong>
           <%= simple_format post.content %>
-          <%= link_to 'Write Comment', "#", class: "btn btn-primary" %> 
         </div>
       </div>
     <% end %>

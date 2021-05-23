@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get 'about' => 'about#index'
   get 'refer' => 'refer#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-  resources :profiles
   resources :jobs
   
+ # resources :profiles
+
   resources :posts do
     resources :comments
   end
@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resources :messages
   end
 
+  get "profile/:username" => "users#show", as: :profile
 
 end

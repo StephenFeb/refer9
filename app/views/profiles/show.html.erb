@@ -1,27 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="card" >
-    <div class="card-body">
-      <div style="text-align:center;">
 
-    <%= image_tag current_user.avatar, width: "150px", height: "150px", class: "rounded-circle" %>
+<p>
+  <strong>Job Title:</strong>
+  <%= @profile.name %>
+</p>
 
-    <h4 class="card-title"><%= @profile.name %> </h4>
+<p>
+  <strong>Location:</strong>
+  <%= @profile.job_title %>
+</p>
 
-    <p class="card-text"><strong>Job Title:</strong> <%= @profile.job_title %> </p>
+<p>
+  <strong>Job Description:</strong>
+  <%= @profile.work_experience %>
+</p>
 
-    <p class="card-text"><strong>Work Experience:</strong> <%= @profile.work_experience %> </p>
-
-    <p class="card-text"><strong>Skills:</strong> <%= @profile.skills %> </p>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="text-align:center;">
-  <button class="btn btn-primary" <%= link_to 'Edit', edit_profile_path(@profile) %> </button>
-  <button class="btn btn-primary" <%= link_to 'Back', profiles_path %> </button>
-  <button class="btn btn-primary" <%= link_to 'Create Post', new_post_path %> </button>
-</div>
+<p>
+  <strong>Skills:</strong>
+  <%= @profile.skills %>
+</p>
