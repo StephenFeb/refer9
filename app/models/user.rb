@@ -16,4 +16,9 @@ class User < ApplicationRecord
   has_many :conversations
   has_many :messages, dependent: :destroy
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+
 end

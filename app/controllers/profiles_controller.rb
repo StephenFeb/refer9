@@ -1,31 +1,32 @@
 class ProfilesController < ApplicationController
-    before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  # GET /profiles
-  # GET /profiles.json
+  # GET /jobs
+  # GET /jobs.json
   def index
     @profiles = Profile.all.order("created_at DESC")
   end
 
-  # GET /profiles/1
-  # GET /profiles/1.json
+  # GET /jobs/1
+  # GET /jobs/1.json
   def show
   end
 
-  # GET /profiles/new
+  # GET /jobs/new
   def new
-    @profile = current_user.build_profile
+    @profile = Profile.new
   end
 
-  # GET /profiles/1/edit
+  # GET /jobs/1/edit
   def edit
   end
 
-  # POST /profiles
-  # POST /profiles.json
+  # POST /jobs
+  # POST /jobs.json
   def create
-    @profile = current_user.build_profile(profile_params)
-
+    @profile = Profile.new(profile_params)
+    @profile.user = current_user
+    
     respond_to do |format|
       if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
@@ -37,8 +38,8 @@ class ProfilesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /profiles/1
-  # PATCH/PUT /profiles/1.json
+  # PATCH/PUT /jobs/1
+  # PATCH/PUT /jobs/1.json
   def update
     respond_to do |format|
       if @profile.update(profile_params)
@@ -51,8 +52,8 @@ class ProfilesController < ApplicationController
     end
   end
 
-  # DELETE /profiles/1
-  # DELETE /profiles/1.json
+  # DELETE /jobs/1
+  # DELETE /jobs/1.json
   def destroy
     @profile.destroy
     respond_to do |format|
@@ -64,13 +65,14 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+        @profile = Profile.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.permit(:name, :job_title, :work_experience, :skills, :avatar)
+      params.require(:profile).permit(:name, :job_title, :work_experience, :skills)
     end
 
 end
+
 

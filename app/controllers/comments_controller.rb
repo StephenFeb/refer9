@@ -13,16 +13,18 @@ def new
 end
 
 def create
+
     @comment = Comment.new(comments_params)
     @post = Post.find(params[:post_id])
-    @comment.user_id = current_user
+    @comment.user_id = current_user.id
     @comment.post = @post
 
-          if @comment.save
-            redirect_to post_path
-          else
-            render :new
-          end
+    if @comment.save
+      redirect_to post_path(@comment.post_id)
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
+    end
     
     
 end
