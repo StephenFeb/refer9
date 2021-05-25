@@ -1,0 +1,19 @@
+<% if !@cv.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @cv.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well">
+  <%= form_for @cv, html: { multipart: true } do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :resume %>
+    <%= f.file_field :resume %>
+    <%= f.submit "Upload Resume", class: "btn btn-primary" %>
+  <% end %>
+</div>

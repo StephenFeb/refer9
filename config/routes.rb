@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :messages
   end
 
+
+  resources :cvs, only: [:index, :show, :new, :create, :destroy]
+
   get "profile/:username" => "users#show", as: :profile
 
 end
