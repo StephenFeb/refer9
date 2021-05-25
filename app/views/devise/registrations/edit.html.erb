@@ -10,6 +10,10 @@
               required: true %>
     <%= f.input :last_name,
               required: true %>
+    <%= f.input :bio,
+              required: true %>
+    <%= f.input :current_job,
+              required: true %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

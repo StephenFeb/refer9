@@ -11,6 +11,7 @@ def show
     # user profile
 end
 
+
 private
 
 def set_user
@@ -18,7 +19,7 @@ def set_user
 end
 
 def user_params
-    params.require(:user).permit(:first_name, :last_name, :cv)
+    params.require(:user).permit(:first_name, :last_name, :bio, :cv)
 end
 
 end

@@ -1,18 +1,23 @@
-<div class="container">
-    <h2><strong><%= current_user.full_name %></strong></h2>
-      <div class="buttons">
-        <%= link_to "Add Avatar", edit_user_registration_path, class: "bth btn-success" %>
-      </div>
-      <div class="buttons">
-        <%= link_to "Add Current Work Experience and Bio", edit_user_registration_path, class: "bth btn-success" %>
-      </div>
-      <div class="buttons">
-        <%= link_to "Edit Profile", edit_user_registration_path, class: "bth btn-success" %>
-      </div>
-      <div class="buttons">
-        <%= link_to "Upload Resume", new_cv_path, class: "bth btn-success" %>
-      </div>
-      <div class="buttons">
-        <%= link_to "View Resume", cv_path(current_user), class: "bth btn-success" %>
-      </div>
+
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h2 class="card-title"><strong><%= current_user.full_name %></strong></h2>
+    <p class="card-text"><%= current_user.bio %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Current Job</li>
+  </ul>
+  <div class="card-body">
+    <div class="buttons">
+      <%= link_to "Edit Profile", edit_user_registration_path, class: "bth btn-success" %>
+    </div>
+    <div class="buttons">
+      <%= link_to "Upload Resume", new_cv_path, class: "bth btn-success" %>
+    </div>
+    <div class="buttons">
+      <%= link_to "View Resume", cv_path(current_user), class: "bth btn-success" %>
+    </div>
+  </div>
 </div>
