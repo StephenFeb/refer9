@@ -34,6 +34,11 @@
     <%= f.file_field :avatar %>
   </div>
 
+  <div class="input-group">
+    <%= f.label :PDF_resume %>
+    <%= f.file_field :pdf_resume %>
+  </div>
+
   <% if resource.avatar.attached? %>
     <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
   <% end %>

@@ -1,13 +1,16 @@
 
 <h1>Posts</h1>
 
-
+<div class="container">
     <% @posts.each do |post| %>
       <div class="card">
         <div class="card-body">
           <strong><%= link_to post.title, post_path(post)  %></strong>
+          <br>
           <%= simple_format post.content %>
+          <br>
         </div>
       </div>
     <% end %>
+</div>
   
