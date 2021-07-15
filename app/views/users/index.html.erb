@@ -1,0 +1,26 @@
+
+<div class="container">
+  <h1>Profiles</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    
+      <div class="card-deck">
+        <% @users.each do |user| %>
+          <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              
+              <h5 class="card-title"><%= link_to user.full_name, user_path(user) %></h5>
+              <p class="card-text"><%= user.current_job %></p>
+              <p class="card-text"><%= user.bio %></p>
+            
+            </div>
+          </div>
+        <% end %>
+      </div>
+    
+  </div>
+</div>
+
