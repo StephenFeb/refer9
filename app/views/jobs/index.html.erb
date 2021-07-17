@@ -1,19 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Jobs</h1>
-<div class="card-deck">
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <% @jobs.each do |job| %>
-      <h5 class="card-title">Job Title: <%= link_to job.job_title, job %> </h5>
-      <p class="card-text">Location: <%= job.location %></p>
-      <p class="card-text">Description: <%= job.description %></p>
-      <p class="card-text">Skills needed: <%= job.skills %></p>
-      <%= link_to 'Edit', edit_job_path(job) %>
-      <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
+
+<div class="container">
+  <div class="row">
+    
+      <div class="card-deck">
+        <% @jobs.each do |job| %>
+          <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Job Title: <%= link_to job.job_title, job %> </h5>
+              <p class="card-text">Location: <%= job.location %></p>
+              <p class="card-text">Description: <%= job.description %></p>
+              <p class="card-text">Skills needed: <%= job.skills %></p>
+              <%= link_to 'Edit', edit_job_path(job) %>
+              <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        <% end %>
+      
+      
+        
+      
+        
+      </div>
   </div>
 </div>
+    
 
