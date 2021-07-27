@@ -30,5 +30,12 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_job,
+    against: [ :name, :current_job ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something! Partial words allowed.
+    }
+
 
 end

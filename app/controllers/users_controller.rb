@@ -5,13 +5,18 @@ class UsersController < ApplicationController
 
 def index
     # user profiles feed
-    @users = User.all
+
+    if params[:query].present?
+        @users = User.search_by_name_and_job(params[:query])
+    else
+        @users = User.all
 end
 
 def show
     # user profile
     @user = User.find(params[:id])
 end
+
 
 
 private
